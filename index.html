@@ -1,32 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LavishNodes - Free Minecraft Servers</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>LavishNodes — Free Minecraft Servers</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gradient-to-r from-indigo-900 via-purple-900 to-black text-white flex flex-col min-h-screen">
-  
+<body class="min-h-screen bg-gradient-to-b from-indigo-900 via-purple-900 to-black text-white flex flex-col">
   <!-- Header -->
-  <header class="p-6 flex justify-between items-center">
-    <h1 class="text-2xl font-bold">LavishNodes</h1>
+  <header class="flex items-center justify-between px-6 py-4">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center text-xl font-bold">LN</div>
+      <div>
+        <h1 class="text-lg font-bold">LavishNodes</h1>
+        <p class="text-xs text-gray-300">Free Minecraft servers • Mobile-friendly • India-friendly nodes</p>
+      </div>
+    </div>
     <nav>
-      <a href="https://panel.lavishnodes.qzz.io" class="px-4 py-2 bg-purple-600 rounded-lg shadow hover:bg-purple-700 transition">Panel Login</a>
+      <a href="https://panel.lavishnodes.qzz.io" target="_blank" rel="noopener" class="px-4 py-2 bg-transparent border border-purple-500 rounded-lg text-sm hover:bg-purple-700 transition">Panel</a>
     </nav>
   </header>
 
-  <!-- Hero Section -->
-  <main class="flex-grow flex flex-col justify-center items-center text-center px-4">
+  <!-- Hero / Center -->
+  <main class="flex-grow flex flex-col items-center justify-center px-6 text-center">
     <h2 class="text-4xl md:text-6xl font-extrabold mb-4">Free Minecraft Servers</h2>
-    <p class="text-lg md:text-xl mb-6 text-gray-300">24/7 Online • No Credit Card • Totally Free</p>
-    <a href="https://panel.lavishnodes.qzz.io" class="px-8 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl shadow-lg text-lg font-semibold hover:scale-105 transition">🚀 Get Started</a>
+    <p class="max-w-xl text-gray-300 mb-8">
+      Join LavishNodes — create and manage your own Minecraft server for free. No credit card, mobile-ready, and regional nodes for low latency.
+    </p>
+
+    <!-- BIG Panel Button (center) -->
+    <a href="https://panel.lavishnodes.qzz.io" target="_blank" rel="noopener"
+       class="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl shadow-lg text-lg font-semibold hover:scale-105 transition">
+      🚀 Open Panel
+      <span class="text-sm opacity-80">panel.lavishnodes.qzz.io</span>
+    </a>
+
+    <!-- Honest status / blurb -->
+    <div class="mt-6 text-sm text-gray-300 max-w-2xl">
+      <p><strong>Note:</strong> We operate monitored servers with regional nodes (including India) and 24/7 support. We continually improve availability — if you need guaranteed SLA, contact us for details.</p>
+    </div>
   </main>
 
-  <!-- Footer -->
-  <footer class="p-4 text-center text-gray-400 text-sm">
-    © 2025 LavishNodes • Made with 💜 for Minecrafters
-  </footer>
+  <!-- Features -->
+  <section class="bg-slate-900/30 border-t border-slate-800 py-10 px-6">
+    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="p-5 bg-white/5 rounded-xl">
+        <h3 class="font-semibold mb-2">Free & Easy</h3>
+        <p class="text-sm text-gray-300">Create servers in minutes — no payment details required.</p>
+      </div>
+      <div class="p-5 bg-white/5 rounded-xl">
+        <h3 class="font-semibold mb-2">Regional Nodes</h3>
+        <p class="text-sm text-gray-300">India-based nodes available to reduce ping for local players.</p>
+      </div>
+      <div class="p-5 bg-white/5 rounded-xl">
+        <h3 class="font-semibold mb-2">24/7 Monitoring</h3>
+        <p class="text-sm text-gray-300">Automated monitoring and backups to keep servers stable and recoverable.</p>
+      </div>
+    </div>
+  </section>
 
+  <!-- Footer -->
+  <footer class="p-6 text-center text-gray-400 text-sm">
+    © 2025 LavishNodes • Built with love • <a class="underline" href="https://panel.lavishnodes.qzz.io" target="_blank" rel="noopener">Open Panel</a>
+  </footer>
 </body>
 </html>
