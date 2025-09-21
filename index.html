@@ -1,156 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>LavishNodes — Free & Paid Minecraft Hosting</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LavishNodes | Free & Paid Minecraft Hosting</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Press Start 2P', cursive;
+      background: url('https://i.ibb.co/Z6yMcd2/creeper-bg.jpg') no-repeat center center/cover;
+      color: #fff;
+      text-align: center;
+    }
+    header {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 20px 0;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+    header img {
+      width: 180px;
+      height: auto;
+    }
+    h1 {
+      color: #32cd32;
+      margin: 15px 0;
+      text-shadow: 2px 2px #000;
+    }
+    .plans {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 40px 10px;
+      background: rgba(0, 0, 0, 0.6);
+    }
+    .plan {
+      background: #1c1c1c;
+      border: 2px solid #32cd32;
+      padding: 20px;
+      width: 260px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px #32cd32;
+      transition: transform 0.3s ease;
+    }
+    .plan:hover {
+      transform: scale(1.05);
+    }
+    .plan h2 {
+      color: #32cd32;
+      margin-bottom: 10px;
+    }
+    .plan p {
+      margin: 10px 0;
+      font-size: 14px;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #32cd32;
+      color: #000;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #28a428;
+    }
+    footer {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 15px;
+      font-size: 12px;
+    }
+    .sale-banner {
+      background: #ff3333;
+      color: #fff;
+      padding: 10px;
+      font-weight: bold;
+      text-shadow: 1px 1px #000;
+    }
+  </style>
 </head>
-<body class="bg-[#0f0f0f] text-white font-sans">
+<body>
 
-  <!-- Navbar with Logo -->
-  <header class="flex items-center justify-between px-6 py-4 bg-black/80 backdrop-blur border-b border-green-600">
-    <a href="/" class="flex items-center gap-2">
-      <img src="assets/logo.png" alt="LavishNodes" class="h-10 w-auto">
-    </a>
-    <nav class="flex gap-6 text-sm font-medium">
-      <a href="#features" class="hover:text-green-400">Features</a>
-      <a href="#plans" class="hover:text-green-400">Plans</a>
-      <a href="#uptime" class="hover:text-green-400">Uptime</a>
-      <a href="https://paidpanel.lavishnodes.qzz.io"
-         target="_blank"
-         class="bg-yellow-500 hover:bg-yellow-400 text-black px-4 py-2 rounded-lg font-semibold shadow">
-         💎 Paid Panel
-      </a>
-    </nav>
+  <header>
+    <!-- ✅ Logo Image -->
+    <img src="./logo.png" alt="LavishNodes Logo">
+    <h1>LavishNodes</h1>
+    <p>99.9% Uptime | Free Indian Nodes | Creeper Castle Theme</p>
   </header>
 
-  <!-- Hero Section -->
-  <section class="text-center py-20 px-6 bg-gradient-to-b from-green-900/40 to-black">
-    <h2 class="text-5xl md:text-6xl font-extrabold text-green-400 drop-shadow-lg">Free & Paid Minecraft Hosting</h2>
-    <p class="mt-4 max-w-2xl mx-auto text-gray-300">
-      Indian nodes • DDoS Protection • <span class="text-green-300">99.9% uptime</span>.  
-      Choose a <span class="text-green-300">free plan</span> or upgrade to powerful paid servers.
-    </p>
-    <a href="https://panel.lavishnodes.qzz.io"
-       target="_blank"
-       class="mt-8 inline-block px-8 py-4 bg-green-600 rounded-xl font-semibold hover:bg-green-500 transition">
-      🚀 Get Started Free
-    </a>
-  </section>
-
-  <!-- Features -->
-  <section id="features" class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto py-16 px-6 text-center">
-    <div class="p-6 bg-black/60 rounded-2xl border border-green-700">
-      <h3 class="text-2xl font-bold text-green-300">⚡ Instant Setup</h3>
-      <p class="mt-3 text-gray-300 text-sm">Create and launch your Minecraft server within seconds.</p>
-    </div>
-    <div class="p-6 bg-black/60 rounded-2xl border border-green-700">
-      <h3 class="text-2xl font-bold text-green-300">🛡 DDoS Protection</h3>
-      <p class="mt-3 text-gray-300 text-sm">Stay safe and lag-free with built-in protection.</p>
-    </div>
-    <div class="p-6 bg-black/60 rounded-2xl border border-green-700">
-      <h3 class="text-2xl font-bold text-green-300">🌍 Low Latency</h3>
-      <p class="mt-3 text-gray-300 text-sm">Hosted on fast Indian nodes for the smoothest experience.</p>
-    </div>
-  </section>
-
-  <!-- SALE Banner -->
-  <div class="bg-yellow-500 text-black text-center font-bold text-lg py-3 shadow-lg">
-    🔥 SALE — 10% OFF on every Paid Plan for a limited time!
+  <div class="sale-banner">
+    🎉 SALE! Get 10% OFF on every Paid Plan – Limited Time Only 🎉
   </div>
 
-  <!-- Plans -->
-  <section id="plans" class="py-20 px-6 bg-gradient-to-b from-black to-green-950/30 border-t border-green-700">
-    <h2 class="text-3xl font-bold text-center mb-12">Hosting Plans</h2>
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl mx-auto">
+  <section class="plans">
+    <!-- Free Plan -->
+    <div class="plan">
+      <h2>Starter Plan</h2>
+      <p>💜 FREE Forever</p>
+      <p>• 1GB RAM<br>• Basic Support<br>• Indian Node</p>
+      <a class="btn" href="https://panel.lavishnodes.qzz.io" target="_blank">Get Free Panel</a>
+    </div>
 
-      <!-- Starter Free -->
-      <div class="bg-black/70 border border-green-700 rounded-2xl p-8 text-center">
-        <h3 class="text-xl font-bold text-green-400">🌱 Starter (Free)</h3>
-        <p class="mt-2 text-gray-400">Perfect for beginners</p>
-        <p class="mt-3 text-3xl font-bold text-green-300">₹0</p>
-        <ul class="mt-6 space-y-2 text-sm text-gray-300">
-          <li>✔ 2GB RAM</li>
-          <li>✔ 1 vCPU</li>
-          <li>✔ Basic Resources</li>
-        </ul>
-        <a href="https://panel.lavishnodes.qzz.io"
-           target="_blank"
-           class="mt-6 inline-block px-6 py-2 bg-green-600 rounded-lg hover:bg-green-500">
-           Free Panel
-        </a>
-      </div>
+    <!-- Paid Plan 1 -->
+    <div class="plan">
+      <h2>Basic</h2>
+      <p>₹40/month</p>
+      <p>• 2GB RAM<br>• Priority Support<br>• High Speed Node</p>
+      <a class="btn" href="https://paidpanel.lavishnodes.qzz.io" target="_blank">Go to Paid Panel</a>
+    </div>
 
-      <!-- Gamer Paid -->
-      <div class="bg-black/80 border-2 border-yellow-400 rounded-2xl p-8 text-center shadow-lg">
-        <h3 class="text-xl font-bold text-yellow-400">⚡ Gamer</h3>
-        <p class="mt-2 text-gray-400">For active friends</p>
-        <p class="mt-3 text-3xl font-bold text-yellow-300">₹40/mo</p>
-        <ul class="mt-6 space-y-2 text-sm text-gray-300">
-          <li>✔ 4GB RAM</li>
-          <li>✔ 2 vCPU</li>
-          <li>✔ Priority Support</li>
-        </ul>
-        <a href="https://paidpanel.lavishnodes.qzz.io"
-           target="_blank"
-           class="mt-6 inline-block px-6 py-2 bg-yellow-500 text-black rounded-lg hover:bg-yellow-400">
-           Paid Panel
-        </a>
-      </div>
+    <!-- Paid Plan 2 -->
+    <div class="plan">
+      <h2>Pro</h2>
+      <p>₹150/month</p>
+      <p>• 4GB RAM<br>• Premium Support<br>• Fast SSD Storage</p>
+      <a class="btn" href="https://paidpanel.lavishnodes.qzz.io" target="_blank">Go to Paid Panel</a>
+    </div>
 
-      <!-- Pro Paid -->
-      <div class="bg-black/80 border-2 border-yellow-400 rounded-2xl p-8 text-center shadow-lg">
-        <h3 class="text-xl font-bold text-yellow-400">💥 Pro</h3>
-        <p class="mt-2 text-gray-400">Great for small communities</p>
-        <p class="mt-3 text-3xl font-bold text-yellow-300">₹150/mo</p>
-        <ul class="mt-6 space-y-2 text-sm text-gray-300">
-          <li>✔ 6GB RAM</li>
-          <li>✔ 3 vCPU</li>
-          <li>✔ Enhanced DDoS Protection</li>
-        </ul>
-        <a href="https://paidpanel.lavishnodes.qzz.io"
-           target="_blank"
-           class="mt-6 inline-block px-6 py-2 bg-yellow-500 text-black rounded-lg hover:bg-yellow-400">
-           Paid Panel
-        </a>
-      </div>
-
-      <!-- Premium Paid -->
-      <div class="bg-black/80 border-2 border-yellow-400 rounded-2xl p-8 text-center shadow-lg">
-        <h3 class="text-xl font-bold text-yellow-400">👑 Premium</h3>
-        <p class="mt-2 text-gray-400">For big servers & events</p>
-        <p class="mt-3 text-3xl font-bold text-yellow-300">₹300/mo</p>
-        <ul class="mt-6 space-y-2 text-sm text-gray-300">
-          <li>✔ 10GB RAM</li>
-          <li>✔ 4 vCPU</li>
-          <li>✔ Ultra Performance</li>
-        </ul>
-        <a href="https://paidpanel.lavishnodes.qzz.io"
-           target="_blank"
-           class="mt-6 inline-block px-6 py-2 bg-yellow-500 text-black rounded-lg hover:bg-yellow-400">
-           Paid Panel
-        </a>
-      </div>
-
+    <!-- Paid Plan 3 -->
+    <div class="plan">
+      <h2>Elite</h2>
+      <p>₹300/month</p>
+      <p>• 8GB RAM<br>• VIP Support<br>• Ultimate Performance</p>
+      <a class="btn" href="https://paidpanel.lavishnodes.qzz.io" target="_blank">Go to Paid Panel</a>
     </div>
   </section>
 
-  <!-- Uptime -->
-  <section id="uptime" class="py-16 px-6 text-center bg-black/70 border-t border-green-700">
-    <h2 class="text-2xl font-bold text-green-400">Why LavishNodes?</h2>
-    <p class="mt-4 max-w-2xl mx-auto text-gray-300">
-      Enjoy <span class="text-green-300 font-semibold">99.9% uptime</span> with blazing fast Indian nodes.  
-      Whether you choose Free or Paid plans, our infrastructure ensures smooth gameplay.
-    </p>
-  </section>
-
-  <!-- Footer -->
-  <footer class="py-6 text-center text-gray-400 text-sm bg-black border-t border-green-700">
-    © 2025 LavishNodes • Free & Paid Minecraft Hosting • 
-    <a href="https://panel.lavishnodes.qzz.io" class="underline">Free Panel</a> • 
-    <a href="https://paidpanel.lavishnodes.qzz.io" class="underline">Paid Panel</a>
+  <footer>
+    © 2025 LavishNodes | Powered by Creeper Castle Style Hosting
   </footer>
 
 </body>
-  </html>
+</html>
