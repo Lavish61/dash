@@ -1,158 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>LavishNodes — Free & Paid Minecraft Hosting</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lavishnodes | High Performance Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #050505;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        .glass-nav {
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+        }
+        .card-hover {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: #3b82f6;
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        .btn-gradient {
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+            transition: transform 0.2s;
+        }
+        .btn-gradient:hover {
+            transform: scale(1.03);
+            filter: brightness(1.1);
+        }
+    </style>
 </head>
-<body class="bg-[#0f0f0f] text-white font-sans">
+<body>
 
-  <!-- Navbar -->
-  <header class="flex items-center justify-between px-6 py-4 bg-black/80 backdrop-blur border-b border-green-600">
-    <h1 class="text-2xl font-bold text-green-400">LavishNodes</h1>
-    <nav class="flex gap-6 text-sm font-medium">
-      <a href="#features" class="hover:text-green-400">Features</a>
-      <a href="#plans" class="hover:text-green-400">Plans</a>
-      <a href="#uptime" class="hover:text-green-400">Uptime</a>
-      <a href="https://paidpanel.lavishnodes.qzz.io"
-         target="_blank"
-         class="bg-yellow-500 hover:bg-yellow-400 text-black px-4 py-2 rounded-lg font-semibold shadow">
-         💎 Paid Panel
-      </a>
+    <nav class="glass-nav sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center font-bold">L</div>
+                <span class="text-xl font-bold tracking-tight uppercase">Lavish<span class="text-blue-500">nodes</span></span>
+            </div>
+            
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-400">
+                <a href="https://dash.lavishnodes.qzz.io" class="hover:text-white transition">Dashboard</a>
+                <a href="https://status.lavishnodes.qzz.io" class="hover:text-white transition">Status</a>
+                <a href="#" class="hover:text-white transition">Store</a>
+                <a href="https://discord.gg/your-invite-link" class="text-indigo-400 hover:text-indigo-300 transition">Discord</a>
+            </div>
+
+            <div class="flex items-center space-x-4">
+                <a href="https://dash.lavishnodes.qzz.io/auth/login" class="text-sm font-medium hover:text-blue-400 transition">Login</a>
+                <a href="https://dash.lavishnodes.qzz.io/auth/register" class="btn-gradient px-5 py-2 rounded-full text-sm font-bold shadow-lg shadow-blue-500/20">Sign Up</a>
+            </div>
+        </div>
     </nav>
-  </header>
 
-  <!-- Hero Section -->
-  <section class="text-center py-20 px-6 bg-gradient-to-b from-green-900/40 to-black">
-    <h2 class="text-5xl md:text-6xl font-extrabold text-green-400 drop-shadow-lg">Free & Paid Minecraft Hosting</h2>
-    <p class="mt-4 max-w-2xl mx-auto text-gray-300">
-      Indian nodes • DDoS Protection • <span class="text-green-300">99.9% uptime</span>.  
-      Choose a <span class="text-green-300">free plan</span> or upgrade to powerful paid servers.
-    </p>
-    <a href="https://panel.lavishnodes.qzz.io"
-       target="_blank"
-       class="mt-8 inline-block px-8 py-4 bg-green-600 rounded-xl font-semibold hover:bg-green-500 transition">
-      🚀 Get Started Free
-    </a>
-  </section>
+    <header class="relative pt-24 pb-16 px-6 hero-gradient">
+        <div class="max-w-5xl mx-auto text-center">
+            <span class="px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold tracking-widest uppercase mb-6 inline-block">
+                Premium Node Hosting
+            </span>
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-8 leading-tight">
+                Control Your Servers <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">With Ease.</span>
+            </h1>
+            <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-12">
+                Manage your Minecraft, VPS, and high-performance game servers from our custom-built Lavishnodes dashboard.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="https://dash.lavishnodes.qzz.io/dashboard" class="btn-gradient w-full sm:w-auto px-10 py-4 rounded-xl font-bold text-lg shadow-xl">Go to Dashboard</a>
+                <a href="https://discord.gg/your-invite-link" class="card-hover w-full sm:w-auto px-10 py-4 rounded-xl font-bold text-lg">Join Discord</a>
+            </div>
+        </div>
+    </header>
 
-  <!-- Features -->
-  <section id="features" class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto py-16 px-6 text-center">
-    <div class="p-6 bg-black/60 rounded-2xl border border-green-700">
-      <h3 class="text-2xl font-bold text-green-300">⚡ Instant Setup</h3>
-      <p class="mt-3 text-gray-300 text-sm">Create and launch your Minecraft server within seconds.</p>
-    </div>
-    <div class="p-6 bg-black/60 rounded-2xl border border-green-700">
-      <h3 class="text-2xl font-bold text-green-300">🛡 DDoS Protection</h3>
-      <p class="mt-3 text-gray-300 text-sm">Stay safe and lag-free with built-in protection.</p>
-    </div>
-    <div class="p-6 bg-black/60 rounded-2xl border border-green-700">
-      <h3 class="text-2xl font-bold text-green-300">🌍 Low Latency</h3>
-      <p class="mt-3 text-gray-300 text-sm">Hosted on fast Indian nodes for the smoothest experience.</p>
-    </div>
-  </section>
+    <section class="max-w-7xl mx-auto px-6 py-20">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <a href="https://dash.lavishnodes.qzz.io/account" class="card-hover p-8 rounded-3xl group">
+                <div class="w-12 h-12 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6 border border-blue-500/20">
+                    <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold mb-2">My Account</h3>
+                <p class="text-gray-500 text-sm">Manage your profile, API keys, and security settings instantly.</p>
+            </a>
 
-  <!-- SALE Banner -->
-  <div class="bg-yellow-500 text-black text-center font-bold text-lg py-3 shadow-lg">
-    🔥 SALE — 10% OFF on every Paid Plan for a limited time!
-  </div>
+            <a href="https://dash.lavishnodes.qzz.io/server/create" class="card-hover p-8 rounded-3xl group">
+                <div class="w-12 h-12 bg-purple-500/10 rounded-2xl flex items-center justify-center mb-6 border border-purple-500/20">
+                    <svg class="w-6 h-6 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Deploy Server</h3>
+                <p class="text-gray-500 text-sm">Launch new instances with NVMe SSDs and high-speed networking.</p>
+            </a>
 
-  <!-- Plans -->
-  <section id="plans" class="py-20 px-6 bg-gradient-to-b from-black to-green-950/30 border-t border-green-700">
-    <h2 class="text-3xl font-bold text-center mb-12">Hosting Plans</h2>
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl mx-auto">
+            <a href="https://dash.lavishnodes.qzz.io/billing" class="card-hover p-8 rounded-3xl group">
+                <div class="w-12 h-12 bg-emerald-500/10 rounded-2xl flex items-center justify-center mb-6 border border-emerald-500/20">
+                    <svg class="w-6 h-6 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Billing & Credits</h3>
+                <p class="text-gray-500 text-sm">Add balance or check your invoices with our transparent system.</p>
+            </a>
 
-      <!-- Starter Free -->
-      <div class="bg-black/70 border border-green-700 rounded-2xl p-8 text-center
-                  hover:-translate-y-2 transform transition duration-300">
-        <h3 class="text-xl font-bold text-green-400">🌱 Starter (Free)</h3>
-        <p class="mt-2 text-gray-400">Perfect for beginners</p>
-        <p class="mt-3 text-3xl font-bold text-green-300">₹0</p>
-        <ul class="mt-6 space-y-2 text-sm text-gray-300">
-          <li>✔ 2GB RAM</li>
-          <li>✔ 1 vCPU</li>
-          <li>✔ Basic Resources</li>
-        </ul>
-        <a href="https://panel.lavishnodes.qzz.io"
-           target="_blank"
-           class="mt-6 inline-block px-6 py-2 bg-green-600 rounded-lg hover:bg-green-500">
-           Free Panel
-        </a>
-      </div>
+        </div>
+    </section>
 
-      <!-- Gamer Paid -->
-      <div class="bg-black/80 border-2 border-yellow-400 rounded-2xl p-8 text-center shadow-lg
-                  hover:-translate-y-2 transform transition duration-300">
-        <h3 class="text-xl font-bold text-yellow-400">⚡ Gamer</h3>
-        <p class="mt-2 text-gray-400">For active friends</p>
-        <p class="mt-3 text-3xl font-bold text-yellow-300">₹40/mo</p>
-        <ul class="mt-6 space-y-2 text-sm text-gray-300">
-          <li>✔ 4GB RAM</li>
-          <li>✔ 2 vCPU</li>
-          <li>✔ Priority Support</li>
-        </ul>
-        <a href="https://paidpanel.lavishnodes.qzz.io"
-           target="_blank"
-           class="mt-6 inline-block px-6 py-2 bg-yellow-500 text-black rounded-lg hover:bg-yellow-400">
-           Paid Panel
-        </a>
-      </div>
-
-      <!-- Pro Paid -->
-      <div class="bg-black/80 border-2 border-yellow-400 rounded-2xl p-8 text-center shadow-lg
-                  hover:-translate-y-2 transform transition duration-300">
-        <h3 class="text-xl font-bold text-yellow-400">💥 Pro</h3>
-        <p class="mt-2 text-gray-400">Great for small communities</p>
-        <p class="mt-3 text-3xl font-bold text-yellow-300">₹150/mo</p>
-        <ul class="mt-6 space-y-2 text-sm text-gray-300">
-          <li>✔ 6GB RAM</li>
-          <li>✔ 3 vCPU</li>
-          <li>✔ Enhanced DDoS Protection</li>
-        </ul>
-        <a href="https://paidpanel.lavishnodes.qzz.io"
-           target="_blank"
-           class="mt-6 inline-block px-6 py-2 bg-yellow-500 text-black rounded-lg hover:bg-yellow-400">
-           Paid Panel
-        </a>
-      </div>
-
-      <!-- Premium Paid -->
-      <div class="bg-black/80 border-2 border-yellow-400 rounded-2xl p-8 text-center shadow-lg
-                  hover:-translate-y-2 transform transition duration-300">
-        <h3 class="text-xl font-bold text-yellow-400">👑 Premium</h3>
-        <p class="mt-2 text-gray-400">For big servers & events</p>
-        <p class="mt-3 text-3xl font-bold text-yellow-300">₹300/mo</p>
-        <ul class="mt-6 space-y-2 text-sm text-gray-300">
-          <li>✔ 10GB RAM</li>
-          <li>✔ 4 vCPU</li>
-          <li>✔ Ultra Performance</li>
-        </ul>
-        <a href="https://paidpanel.lavishnodes.qzz.io"
-           target="_blank"
-           class="mt-6 inline-block px-6 py-2 bg-yellow-500 text-black rounded-lg hover:bg-yellow-400">
-           Paid Panel
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Uptime -->
-  <section id="uptime" class="py-16 px-6 text-center bg-black/70 border-t border-green-700">
-    <h2 class="text-2xl font-bold text-green-400">Why LavishNodes?</h2>
-    <p class="mt-4 max-w-2xl mx-auto text-gray-300">
-      Enjoy <span class="text-green-300 font-semibold">99.9% uptime</span> with blazing fast Indian nodes.  
-      Whether you choose Free or Paid plans, our infrastructure ensures smooth gameplay.
-    </p>
-  </section>
-
-  <!-- Footer -->
-  <footer class="py-6 text-center text-gray-400 text-sm bg-black border-t border-green-700">
-    © 2025 LavishNodes • Free & Paid Minecraft Hosting • 
-    <a href="https://panel.lavishnodes.qzz.io" class="underline">Free Panel</a> • 
-    <a href="https://paidpanel.lavishnodes.qzz.io" class="underline">Paid Panel</a>
-  </footer>
+    <footer class="max-w-7xl mx-auto px-6 py-12 border-t border-white/5 flex flex-col md:row items-center justify-between text-gray-500 text-xs">
+        <p>&copy; 2026 Lavishnodes. All rights reserved.</p>
+        <div class="flex space-x-6 mt-4 md:mt-0">
+            <a href="#" class="hover:text-white">Terms of Service</a>
+            <a href="#" class="hover:text-white">Privacy Policy</a>
+            <a href="https://status.lavishnodes.qzz.io" class="hover:text-white">Network Status</a>
+        </div>
+    </footer>
 
 </body>
 </html>
