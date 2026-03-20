@@ -3,144 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lavishnodes | All-In-One Hosting</title>
+    <title>Lavishnodes | All-In-One Premium Hosting</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #050505; color: #fff; }
-        .glass { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.08); backdrop-filter: blur(10px); }
-        .glass:hover { border-color: #3b82f6; transform: translateY(-5px); transition: all 0.3s; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #050505; color: #fff; scroll-behavior: smooth; }
+        .glass { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.08); backdrop-filter: blur(12px); }
+        .glass:hover { border-color: #3b82f6; transform: translateY(-5px); transition: all 0.3s ease-out; }
         .gradient-text { background: linear-gradient(90deg, #3b82f6, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .btn-blue { background: linear-gradient(135deg, #2563eb, #7c3aed); }
+        .btn-blue { background: linear-gradient(135deg, #2563eb, #7c3aed); box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2); }
+        .loader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #050505; display: flex; flex-direction: column; justify-content: center; items-center: center; z-index: 9999; transition: opacity 0.5s ease; }
     </style>
 </head>
-<body>
+<body class="overflow-x-hidden">
 
-    <nav class="flex items-center justify-between px-6 py-5 max-w-7xl mx-auto sticky top-0 z-50 bg-[#050505]/80 backdrop-blur-md">
+    <div id="loader" class="loader text-center">
+        <div class="text-4xl font-black tracking-tighter mb-4">LAVISH<span class="text-blue-500">NODES</span></div>
+        <div class="w-16 h-1 bg-blue-900 rounded-full overflow-hidden">
+            <div class="h-full bg-blue-500 animate-[pulse_1.5s_infinite]"></div>
+        </div>
+    </div>
+
+    <nav class="flex items-center justify-between px-6 py-5 max-w-7xl mx-auto sticky top-0 z-50 bg-[#050505]/80 backdrop-blur-md border-b border-white/5">
         <div class="text-xl font-extrabold tracking-tighter">LAVISH<span class="text-blue-500">NODES</span></div>
         <div class="hidden md:flex space-x-6 text-sm font-medium text-gray-400">
-            <a href="#minecraft" class="hover:text-white">Minecraft</a>
-            <a href="#games" class="hover:text-white">Other Games</a>
-            <a href="#vps" class="hover:text-white">VPS</a>
+            <a href="#minecraft" class="hover:text-white transition">Minecraft</a>
+            <a href="#games" class="hover:text-white transition">Other Games</a>
+            <a href="#vps" class="hover:text-white transition">VPS</a>
+            <a href="https://status.lavishnodes.qzz.io" class="hover:text-white transition">Status</a>
         </div>
         <div class="flex items-center space-x-4">
-            <a href="https://discord.gg/cbathtnAXj" class="text-sm font-bold text-indigo-400">Join Discord</a>
-            <a href="https://dash.lavishnodes.qzz.io" class="bg-white text-black px-5 py-2 rounded-full text-xs font-bold">Dashboard</a>
+            <a href="https://discord.gg/cbathtnAXj" class="hidden sm:block text-sm font-bold text-indigo-400 hover:text-indigo-300">Discord</a>
+            <a href="https://dash.lavishnodes.qzz.io" class="bg-white text-black px-6 py-2 rounded-full text-xs font-bold hover:bg-gray-200 transition">Dashboard</a>
         </div>
     </nav>
 
-    <section class="py-20 text-center px-4">
-        <div class="inline-block px-4 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[10px] font-bold uppercase tracking-widest mb-6">
-            Everything You Need In One Place
+    <header class="py-24 text-center px-6 relative">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-blue-600/10 blur-[120px] rounded-full -z-10"></div>
+        <div class="inline-block px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[11px] font-bold uppercase tracking-[0.2em] mb-8">
+            The Ultimate All-In-One Host
         </div>
-        <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
-            The <span class="gradient-text">All-In-One</span> <br> Hosting Solution.
+        <h1 class="text-6xl md:text-8xl font-black mb-8 leading-[1.1] tracking-tight">
+            High Performance <br> <span class="gradient-text">Unmatched Price.</span>
         </h1>
-        <p class="text-gray-400 max-w-xl mx-auto mb-10 text-sm md:text-base">
-            From Free Minecraft nodes to High-End VPS and Multi-Game servers. Powering your community with Lavish performance.
+        <p class="text-gray-400 max-w-2xl mx-auto mb-12 text-lg md:text-xl leading-relaxed">
+            Professional game hosting for Minecraft, GTA, and High-Speed VPS. Secure, fast, and always online.
         </p>
-        <div class="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="#minecraft" class="btn-blue px-8 py-3 rounded-xl font-bold">Explore Plans</a>
-            <a href="https://discord.gg/cbathtnAXj" class="glass px-8 py-3 rounded-xl font-bold">Support Server</a>
-        </div>
-    </section>
 
-    <section class="max-w-7xl mx-auto px-6 py-10">
-        <div class="bg-gradient-to-r from-blue-900/40 to-indigo-900/40 border border-blue-500/30 rounded-3xl p-8 flex flex-col md:row items-center justify-between">
-            <div>
-                <h2 class="text-2xl font-bold mb-2">Get Started for Free!</h2>
-                <p class="text-gray-400 text-sm italic">Limited availability: 1 Free Minecraft Node per user.</p>
+        <div class="flex flex-col items-center">
+            <p id="auth-status-text" class="text-blue-400 text-xs font-bold mb-4 uppercase tracking-widest opacity-80"></p>
+            <div class="flex flex-col sm:flex-row justify-center gap-5 w-full max-w-md">
+                <a id="auth-action-btn" href="#" class="btn-blue w-full sm:w-auto px-12 py-5 rounded-2xl font-black text-xl transition-transform active:scale-95">
+                    </a>
+                <a href="https://discord.gg/cbathtnAXj" class="glass w-full sm:w-auto px-12 py-5 rounded-2xl font-bold text-xl hover:bg-white/5 transition">
+                    Support Server
+                </a>
             </div>
-            <a href="https://dash.lavishnodes.qzz.io/server/create?type=free" class="mt-4 md:mt-0 bg-white text-black px-8 py-3 rounded-xl font-bold text-sm">Claim My Free Server</a>
+        </div>
+    </header>
+
+    <section class="max-w-7xl mx-auto px-6 py-6">
+        <div class="bg-gradient-to-r from-blue-900/40 via-indigo-950/40 to-blue-900/40 border border-blue-500/30 rounded-[2rem] p-10 flex flex-col md:flex-row items-center justify-between text-center md:text-left">
+            <div>
+                <h2 class="text-3xl font-extrabold mb-2">Claim Your Free Server 🎁</h2>
+                <p class="text-gray-400 text-sm">Experience our Ryzen 9 nodes without paying a single rupee. (1 per user)</p>
+            </div>
+            <a href="https://dash.lavishnodes.qzz.io/server/create?type=free" class="mt-8 md:mt-0 bg-white text-black px-10 py-4 rounded-2xl font-black text-sm uppercase tracking-wider hover:bg-blue-50 transition">Get It Now</a>
         </div>
     </section>
 
-    <section id="minecraft" class="max-w-7xl mx-auto px-6 py-16">
-        <h2 class="text-3xl font-bold mb-10 flex items-center gap-3">
-            <span class="w-8 h-1 bg-blue-500 rounded"></span> Minecraft Hosting
+    <section id="minecraft" class="max-w-7xl mx-auto px-6 py-24">
+        <h2 class="text-4xl font-black mb-12 flex items-center gap-4">
+            <span class="w-12 h-1.5 bg-blue-500 rounded-full"></span> Minecraft Hosting
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div class="glass p-6 rounded-2xl">
-                <h3 class="font-bold text-lg mb-1">Standard Node</h3>
-                <div class="text-2xl font-black mb-4">₹100<span class="text-xs font-normal text-gray-500">/GB</span></div>
-                <ul class="text-xs text-gray-400 space-y-3 mb-6">
-                    <li>✅ Ryzen 9 5950X</li>
-                    <li>✅ NVMe SSD Storage</li>
-                    <li>✅ 24/7 Uptime</li>
+            <div class="glass p-8 rounded-[2rem]">
+                <div class="text-xs font-bold text-gray-500 uppercase mb-2 tracking-widest text-center">Economy</div>
+                <h3 class="font-bold text-2xl text-center mb-4">Standard</h3>
+                <div class="text-4xl font-black text-center mb-6">₹100<span class="text-sm font-normal text-gray-500">/GB</span></div>
+                <ul class="text-sm text-gray-400 space-y-4 mb-8">
+                    <li class="flex items-center gap-2">✅ Ryzen 9 5950X</li>
+                    <li class="flex items-center gap-2">✅ NVMe Gen4 Storage</li>
+                    <li class="flex items-center gap-2">✅ 24/7 Support</li>
                 </ul>
-                <button class="w-full py-2 bg-blue-600/20 text-blue-400 rounded-lg font-bold text-xs hover:bg-blue-600 hover:text-white transition">Buy Now</button>
+                <a href="https://dash.lavishnodes.qzz.io/store" class="block w-full py-4 bg-blue-600/10 text-blue-400 rounded-xl font-black text-center text-sm border border-blue-600/20 hover:bg-blue-600 hover:text-white transition">CHOOSE PLAN</a>
             </div>
-            <div class="glass p-6 rounded-2xl border-blue-500/50">
-                <h3 class="font-bold text-lg mb-1 text-blue-400">Premium Node</h3>
-                <div class="text-2xl font-black mb-4">₹180<span class="text-xs font-normal text-gray-500">/GB</span></div>
-                <ul class="text-xs text-gray-400 space-y-3 mb-6">
-                    <li>✅ Ryzen 9 7950X</li>
-                    <li>✅ Dedicated Resources</li>
-                    <li>✅ Priority Support</li>
+
+            <div class="glass p-8 rounded-[2rem] border-blue-500/40 relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-blue-500 text-black text-[10px] font-black px-4 py-1 rounded-bl-xl">POPULAR</div>
+                <div class="text-xs font-bold text-blue-400 uppercase mb-2 tracking-widest text-center">High End</div>
+                <h3 class="font-bold text-2xl text-center mb-4 text-blue-400">Premium</h3>
+                <div class="text-4xl font-black text-center mb-6">₹180<span class="text-sm font-normal text-gray-500">/GB</span></div>
+                <ul class="text-sm text-gray-300 space-y-4 mb-8 font-medium">
+                    <li class="flex items-center gap-2">🔥 Ryzen 9 7950X</li>
+                    <li class="flex items-center gap-2">🔥 Ultra Low Latency</li>
+                    <li class="flex items-center gap-2">🔥 Dedicated Thread</li>
                 </ul>
-                <button class="w-full py-2 btn-blue rounded-lg font-bold text-xs">Buy Now</button>
+                <a href="https://dash.lavishnodes.qzz.io/store" class="block w-full py-4 btn-blue rounded-xl font-black text-center text-sm shadow-lg shadow-blue-500/20">GET PREMIUM</a>
             </div>
         </div>
     </section>
 
-    <section id="games" class="max-w-7xl mx-auto px-6 py-16 bg-[#0a0a0a] rounded-3xl">
-        <h2 class="text-3xl font-bold mb-10 text-center">Multi-Game Servers</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div class="p-6">
-                <div class="text-4xl mb-4 text-orange-500">🔫</div>
-                <h3 class="font-bold mb-2">Rust / GTA V</h3>
-                <p class="text-xs text-gray-500 mb-4">High CPU frequency for heavy modded assets.</p>
-                <span class="text-blue-400 font-bold">Starting ₹599</span>
+    <section id="games" class="max-w-7xl mx-auto px-6 py-24 bg-white/5 rounded-[3rem] mb-20">
+        <div class="text-center mb-16">
+            <h2 class="text-5xl font-black mb-4">All-In-One Platform</h2>
+            <p class="text-gray-400">One host for every game you love to play.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="text-center p-4">
+                <div class="text-5xl mb-6">🔫</div>
+                <h3 class="text-2xl font-extrabold mb-3">GTA V / Rust</h3>
+                <p class="text-gray-500 text-sm mb-6 leading-relaxed text-center">Perfect for FiveM servers with heavy assets and scripts.</p>
+                <div class="text-blue-400 font-black text-xl">₹599/mo</div>
             </div>
-            <div class="p-6">
-                <div class="text-4xl mb-4 text-blue-500">🛡️</div>
-                <h3 class="font-bold mb-2">Palworld / Ark</h3>
-                <p class="text-xs text-gray-500 mb-4">Large memory pools for massive open worlds.</p>
-                <span class="text-blue-400 font-bold">Starting ₹450</span>
+            <div id="vps" class="text-center p-4 border-x border-white/5">
+                <div class="text-5xl mb-6">⚡</div>
+                <h3 class="text-2xl font-extrabold mb-3">Power VPS</h3>
+                <p class="text-gray-500 text-sm mb-6 leading-relaxed">16GB RAM | 4 vCPU | Full Root Access | NVMe SSD.</p>
+                <div class="text-purple-400 font-black text-xl">₹1,999/mo</div>
             </div>
-            <div class="p-6">
-                <div class="text-4xl mb-4 text-green-500">🎮</div>
-                <h3 class="font-bold mb-2">Terraria / CS:GO</h3>
-                <p class="text-xs text-gray-500 mb-4">Low latency nodes for competitive play.</p>
-                <span class="text-blue-400 font-bold">Starting ₹250</span>
+            <div class="text-center p-4">
+                <div class="text-5xl mb-6">🛡️</div>
+                <h3 class="text-2xl font-extrabold mb-3">DDoS Protection</h3>
+                <p class="text-gray-500 text-sm mb-6 leading-relaxed">Layer 7 Protection included on all plans for free.</p>
+                <div class="text-green-400 font-black text-xl">ALWAYS ACTIVE</div>
             </div>
         </div>
     </section>
 
-    <section id="vps" class="max-w-7xl mx-auto px-6 py-16">
-        <h2 class="text-3xl font-bold mb-10 text-right flex items-center justify-end gap-3 text-purple-400">
-             High-End VPS <span class="w-8 h-1 bg-purple-500 rounded"></span>
-        </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="glass p-8 rounded-3xl flex justify-between items-center">
-                <div>
-                    <h3 class="text-xl font-bold">Basic VPS</h3>
-                    <p class="text-sm text-gray-500 mt-1">4GB RAM | 2 vCPU | 50GB NVMe</p>
-                    <div class="mt-4 text-xl font-bold text-purple-400">₹850/mo</div>
+    <footer class="border-t border-white/5 pt-20 pb-10 px-6 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+            <div class="text-center md:text-left">
+                <div class="text-2xl font-black tracking-tighter mb-4 uppercase">LAVISH<span class="text-blue-500">NODES</span></div>
+                <p class="text-gray-500 text-sm leading-relaxed">High-performance gaming nodes with enterprise-grade hardware. We make hosting simple and affordable.</p>
+            </div>
+            <div class="flex flex-col items-center gap-3">
+                <h4 class="font-black text-sm uppercase tracking-widest text-gray-400">Quick Links</h4>
+                <a href="https://dash.lavishnodes.qzz.io" class="text-gray-500 hover:text-white transition">Dashboard</a>
+                <a href="https://discord.gg/cbathtnAXj" class="text-gray-500 hover:text-white transition">Discord Support</a>
+                <a href="https://status.lavishnodes.qzz.io" class="text-gray-500 hover:text-white transition">Network Status</a>
+            </div>
+            <div class="text-center md:text-right">
+                <h4 class="font-black text-sm uppercase tracking-widest text-gray-400 mb-4">Contact Us</h4>
+                <p class="text-gray-500 text-sm">Join our Discord for 24/7 fast assistance.</p>
+                <div class="mt-4 flex justify-center md:justify-end space-x-4">
+                    <a href="https://discord.gg/cbathtnAXj" class="w-10 h-10 bg-indigo-600/20 rounded-xl flex items-center justify-center text-indigo-400 hover:bg-indigo-600 hover:text-white transition">DC</a>
                 </div>
-                <button class="btn-blue px-6 py-3 rounded-xl font-bold text-sm">Deploy</button>
-            </div>
-            <div class="glass p-8 rounded-3xl flex justify-between items-center border-purple-500/30">
-                <div>
-                    <h3 class="text-xl font-bold italic">Power VPS</h3>
-                    <p class="text-sm text-gray-500 mt-1">16GB RAM | 4 vCPU | 100GB NVMe</p>
-                    <div class="mt-4 text-xl font-bold text-purple-400">₹1,999/mo</div>
-                </div>
-                <button class="btn-blue px-6 py-3 rounded-xl font-bold text-sm">Deploy</button>
             </div>
         </div>
-    </section>
-
-    <footer class="border-t border-white/5 py-12 px-6 text-center">
-        <div class="text-lg font-bold mb-4 uppercase tracking-widest">LAVISH<span class="text-blue-500">NODES</span></div>
-        <p class="text-gray-500 text-xs mb-6 max-w-sm mx-auto">Providing high-end game server hosting since 2024. All-in-one platform for developers and gamers.</p>
-        <div class="flex justify-center space-x-6 text-gray-400 text-sm mb-8">
-            <a href="https://discord.gg/cbathtnAXj" class="hover:text-white">Discord</a>
-            <a href="https://dash.lavishnodes.qzz.io" class="hover:text-white">Dashboard</a>
-            <a href="#" class="hover:text-white">Status</a>
+        <div class="pt-8 border-t border-white/5 text-center text-gray-600 text-[10px] font-bold tracking-widest uppercase">
+            © 2026 LAVISHNODES | NOT AN OFFICIAL MINECRAFT PRODUCT | POWERED BY RYZEN 9
         </div>
-        <p class="text-[10px] text-gray-600 font-medium">© 2026 LAVISHNODES. Not an official Minecraft product. Not approved by or associated with Mojang or Microsoft.</p>
     </footer>
+
+    <script>
+        // Loader timeout
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const loader = document.getElementById('loader');
+                loader.style.opacity = '0';
+                setTimeout(() => loader.style.display = 'none', 500);
+            }, 1000);
+        });
+
+        // SMART AUTH LOGIC
+        const loginBtn = document.getElementById('auth-action-btn');
+        const authText = document.getElementById('auth-status-text');
+
+        if (localStorage.getItem('lavish_registered')) {
+            authText.innerText = "Welcome back to the elite fleet";
+            loginBtn.innerText = "Go to Dashboard";
+            loginBtn.href = "https://dash.lavishnodes.qzz.io/auth/login";
+        } else {
+            authText.innerText = "Start your hosting legacy today";
+            loginBtn.innerText = "Register Now";
+            loginBtn.href = "https://dash.lavishnodes.qzz.io/auth/register";
+            
+            // Simulating a signup click
+            loginBtn.addEventListener('click', () => {
+                localStorage.setItem('lavish_registered', 'true');
+            });
+        }
+    </script>
 
 </body>
 </html>
