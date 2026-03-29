@@ -3,232 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lavishnodes | All-In-One God Hosting & AI</title>
+    <title>LavishNodes | Cloud Management OS</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #050505; color: #fff; scroll-behavior: smooth; overflow-x: hidden; }
-        .glass { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.08); backdrop-filter: blur(12px); transition: all 0.3s ease; }
-        .glass:hover { border-color: #3b82f6; transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
-        .gradient-text { background: linear-gradient(90deg, #3b82f6, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .btn-blue { background: linear-gradient(135deg, #2563eb, #7c3aed); transition: all 0.3s; }
-        .btn-blue:hover { transform: scale(1.05); filter: brightness(1.2); box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4); }
-        .loader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #050505; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 9999; transition: opacity 0.5s ease; }
-        
-        #ai-widget { position: fixed; bottom: 25px; right: 25px; z-index: 1000; }
-        .ai-chat-box { width: 340px; height: 480px; display: none; flex-direction: column; overflow: hidden; background: rgba(10, 10, 10, 0.98); border: 1px solid rgba(59, 130, 246, 0.4); border-radius: 2rem; box-shadow: 0 25px 60px rgba(0,0,0,0.8); }
-        .ai-msg { margin-bottom: 12px; padding: 12px 16px; border-radius: 18px; font-size: 14px; max-width: 85%; line-height: 1.5; }
-        .ai-bot-msg { background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.2); align-self: flex-start; border-bottom-left-radius: 4px; color: #d1d5db; }
-        .ai-user-msg { background: #3b82f6; color: white; align-self: flex-end; border-bottom-right-radius: 4px; font-weight: 600; }
-        #ai-messages::-webkit-scrollbar { width: 4px; }
-        #ai-messages::-webkit-scrollbar-thumb { background: #1e40af; border-radius: 10px; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #020202; color: white; overflow-x: hidden; }
+        .page-view { display: none; min-height: 100vh; animation: pageFade 0.4s ease-out; }
+        .page-view.active { display: block; }
+        @keyframes pageFade { from { opacity: 0; transform: scale(0.98); } to { opacity: 1; transform: scale(1); } }
+        .glass { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); backdrop-filter: blur(15px); }
+        .sidebar-btn { transition: 0.3s; border-radius: 12px; margin-bottom: 8px; }
+        .sidebar-btn:hover, .sidebar-btn.active { background: rgba(59, 130, 246, 0.15); color: #3b82f6; }
+        .status-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; margin-right: 8px; }
     </style>
 </head>
 <body>
 
-    <div id="loader" class="loader">
-        <div class="text-5xl font-black italic tracking-tighter animate-pulse uppercase text-blue-500">LAVISH</div>
-        <div class="w-24 h-1.5 bg-blue-900/30 mt-6 rounded-full overflow-hidden">
-            <div class="h-full bg-blue-500 w-1/2 animate-[progress_1.5s_infinite_linear]"></div>
+    <div id="page-home" class="page-view active">
+        <nav class="flex justify-between items-center p-8 max-w-7xl mx-auto">
+            <div class="text-2xl font-black italic">LAVISH<span class="text-blue-500 underline">NODES</span></div>
+            <button onclick="navigateTo('page-auth')" class="glass px-8 py-3 rounded-full text-xs font-black uppercase tracking-widest">Client Portal</button>
+        </nav>
+        <div class="py-40 text-center px-6">
+            <h1 class="text-7xl md:text-9xl font-black mb-8 italic tracking-tighter">ELITE <span class="text-blue-500">HOSTING</span></h1>
+            <p class="text-gray-500 text-xl max-w-2xl mx-auto mb-12">Pterodactyl integration, Ryzen 9 nodes, and 99.9% uptime. Managed by Lavish Nodes.</p>
+            <div class="flex justify-center gap-6">
+                <button onclick="navigateTo('page-auth')" class="bg-blue-600 px-12 py-5 rounded-2xl font-black text-xs uppercase shadow-2xl hover:scale-105 transition">Start Hosting</button>
+                <a href="https://discord.gg/cbathtnAXj" class="glass px-12 py-5 rounded-2xl font-black text-xs uppercase">Community</a>
+            </div>
         </div>
     </div>
 
-    <nav class="flex items-center justify-between px-6 py-6 max-w-7xl mx-auto sticky top-0 z-50 bg-[#050505]/80 backdrop-blur-xl border-b border-white/5">
-        <div class="text-2xl font-black tracking-tighter italic uppercase">LAVISH<span class="text-blue-500">NODES</span></div>
-        <div class="hidden md:flex space-x-10 text-[10px] font-black uppercase tracking-[0.2em] text-gray-500">
-            <a href="#minecraft" class="hover:text-blue-400 transition">Minecraft</a>
-            <a href="#vps" class="hover:text-blue-400 transition">VPS</a>
-            <a href="#games" class="hover:text-blue-400 transition">Game Servers</a>
-        </div>
-        <div class="flex items-center space-x-6">
-            <a href="https://discord.gg/cbathtnAXj" class="hidden sm:block text-xs font-black text-indigo-400 hover:text-indigo-300 uppercase tracking-widest">Discord</a>
-            <a href="https://dash.lavishnodes.qzz.io/auth/login" class="bg-white text-black px-7 py-2.5 rounded-full text-[10px] font-black hover:scale-110 transition shadow-lg">LOGIN</a>
-        </div>
-    </nav>
-
-    <header class="py-32 text-center px-6 relative overflow-hidden">
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-blue-600/5 blur-[140px] rounded-full -z-10"></div>
-        <div class="inline-block px-5 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[10px] font-black uppercase tracking-[0.3em] mb-10">
-            All-In-One Power Host
-        </div>
-        <h1 class="text-7xl md:text-9xl font-black mb-10 leading-none tracking-tighter">
-            Next Gen <br> <span class="gradient-text italic text-blue-500">Performance.</span>
-        </h1>
-        <p class="text-gray-400 max-w-3xl mx-auto mb-16 text-xl md:text-2xl font-medium opacity-70 leading-relaxed">
-            Ryzen 9 7950X Nodes starting at ₹100. Deploy your server with Lavish AI Control.
-        </p>
-
-        <div class="flex flex-col items-center">
-            <p id="auth-status-text" class="text-blue-500 text-[10px] font-black mb-6 uppercase tracking-[0.5em] animate-bounce italic"></p>
-            <div class="flex flex-col sm:flex-row justify-center gap-6 w-full max-w-2xl px-6">
-                <a id="auth-action-btn" href="https://dash.lavishnodes.qzz.io/auth/register" class="btn-blue w-full px-14 py-6 rounded-[24px] font-black text-2xl shadow-2xl shadow-blue-500/20">REGISTER NOW</a>
-                <a href="https://discord.gg/cbathtnAXj" class="glass w-full px-14 py-6 rounded-[24px] font-black text-2xl">Community</a>
-            </div>
-        </div>
-    </header>
-
-    <section class="max-w-7xl mx-auto px-6 py-10 mb-20">
-        <div class="bg-gradient-to-br from-blue-600/20 via-indigo-900/10 to-purple-600/20 border border-blue-500/30 rounded-[3rem] p-12 flex flex-col md:flex-row items-center justify-between shadow-2xl relative overflow-hidden">
-            <div class="text-center md:text-left z-10">
-                <h2 class="text-4xl font-black mb-3 italic">Free Minecraft Node 🎁</h2>
-                <p class="text-gray-500 text-lg font-medium italic">Experience Ryzen 9 power for ₹0. Limited free slots!</p>
-            </div>
-            <a href="https://dash.lavishnodes.qzz.io/server/create?type=free" class="mt-10 md:mt-0 bg-white text-black px-12 py-5 rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-blue-400 transition-all z-10 shadow-xl">Get Started</a>
-        </div>
-    </section>
-
-    <section id="minecraft" class="max-w-7xl mx-auto px-6 py-20">
-        <h2 class="text-5xl font-black mb-16 flex items-center gap-6 italic tracking-tighter uppercase"><span class="w-16 h-2 bg-blue-500 rounded-full"></span> Minecraft Nodes</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <div class="glass p-12 rounded-[3rem]">
-                <h3 class="font-black text-2xl mb-2 text-gray-300">Standard</h3>
-                <div class="text-5xl font-black mb-8">₹100<span class="text-sm font-normal text-gray-600">/GB</span></div>
-                <ul class="text-sm text-gray-500 space-y-5 mb-12 font-bold italic">
-                    <li>✅ Ryzen 9 5950X CPU</li>
-                    <li>✅ NVMe SSD Storage</li>
-                    <li>✅ Instant Deployment</li>
-                </ul>
-                <a href="https://dash.lavishnodes.qzz.io" class="block w-full py-5 bg-white/5 border border-white/10 rounded-2xl font-black text-center text-xs tracking-widest hover:bg-white/10 transition">DEPLOY SERVER</a>
-            </div>
-            <div class="glass p-12 rounded-[3rem] border-blue-500/60 relative scale-105 shadow-[0_0_60px_rgba(59,130,246,0.15)]">
-                <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-500 text-black text-[10px] font-black px-6 py-2 rounded-full uppercase tracking-widest">Premium</span>
-                <h3 class="font-black text-2xl mb-2 text-blue-400">Premium Node</h3>
-                <div class="text-5xl font-black mb-8">₹180<span class="text-sm font-normal text-gray-600">/GB</span></div>
-                <ul class="text-sm text-gray-200 space-y-5 mb-12 font-bold leading-relaxed italic">
-                    <li>🔥 Ryzen 9 7950X CPU</li>
-                    <li>🔥 Ultra Low Latency</li>
-                    <li>🔥 Priority Network</li>
-                </ul>
-                <a href="https://dash.lavishnodes.qzz.io" class="block w-full py-5 btn-blue rounded-2xl font-black text-center text-xs tracking-widest shadow-2xl">BUY PREMIUM</a>
-            </div>
-            <div class="glass p-12 rounded-[3rem]">
-                <h3 class="font-black text-2xl mb-2 text-purple-400">Extreme Node</h3>
-                <div class="text-5xl font-black mb-8">₹250<span class="text-sm font-normal text-gray-600">/GB</span></div>
-                <ul class="text-sm text-gray-500 space-y-5 mb-12 font-bold italic">
-                    <li>⚡ DDR5 5600MHz RAM</li>
-                    <li>⚡ Dedicated IPv4</li>
-                    <li>⚡ 24/7 VIP Support</li>
-                </ul>
-                <a href="https://dash.lavishnodes.qzz.io" class="block w-full py-5 bg-white/5 border border-white/10 rounded-2xl font-black text-center text-xs tracking-widest hover:bg-white/10 transition">CHOOSE PLAN</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="vps" class="max-w-7xl mx-auto px-6 py-24 bg-blue-600/5 rounded-[4rem] mb-32 border border-white/5">
-        <h2 class="text-5xl font-black mb-20 text-center uppercase italic">God Speed VPS</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto px-4">
-            <div class="glass p-10 rounded-[2.5rem] flex flex-col sm:flex-row justify-between items-center gap-6">
-                <div>
-                    <h3 class="text-3xl font-black italic">Basic VPS</h3>
-                    <p class="text-blue-500 text-[10px] mt-2 font-black uppercase tracking-[0.2em]">4GB RAM | 2 vCPU | NVMe</p>
-                    <div class="mt-6 text-3xl font-black italic">₹850<span class="text-xs text-gray-600">/mo</span></div>
+    <div id="page-auth" class="page-view">
+        <div class="flex flex-col items-center justify-center min-h-screen p-6">
+            <div class="glass w-full max-w-md p-12 rounded-[3rem] text-center border-blue-500/20 shadow-2xl">
+                <h2 class="text-4xl font-black mb-4 italic">IDENTITY</h2>
+                <p class="text-gray-500 text-[10px] font-black uppercase tracking-[0.5em] mb-12">Verification Required</p>
+                <div class="space-y-4">
+                    <a href="https://dash.lavishnodes.qzz.io/auth/register" class="bg-blue-600 block py-5 rounded-2xl font-black text-lg shadow-lg">CREATE ACCOUNT</a>
+                    <a href="https://dash.lavishnodes.qzz.io/auth/login" class="glass block py-5 rounded-2xl font-black text-lg">LOGIN TO PANEL</a>
+                    <button onclick="mockLogin()" class="text-blue-400 text-[10px] font-black uppercase mt-10 tracking-widest">Skip to Dashboard Demo (Dev Only) →</button>
                 </div>
-                <a href="https://dash.lavishnodes.qzz.io" class="btn-blue px-10 py-4 rounded-2xl font-black text-xs uppercase tracking-widest">Deploy</a>
-            </div>
-            <div class="glass p-10 rounded-[2.5rem] flex flex-col sm:flex-row justify-between items-center gap-6 border-blue-500/20">
-                <div>
-                    <h3 class="text-3xl font-black italic">Power VPS</h3>
-                    <p class="text-blue-500 text-[10px] mt-2 font-black uppercase tracking-[0.2em]">16GB RAM | 4 vCPU | NVMe</p>
-                    <div class="mt-6 text-3xl font-black italic">₹1,999<span class="text-xs text-gray-600">/mo</span></div>
-                </div>
-                <a href="https://dash.lavishnodes.qzz.io" class="btn-blue px-10 py-4 rounded-2xl font-black text-xs uppercase tracking-widest">Deploy</a>
+                <button onclick="navigateTo('page-home')" class="mt-8 text-gray-700 font-bold text-xs uppercase">← Back</button>
             </div>
         </div>
-    </section>
+    </div>
 
-    <div id="ai-widget">
-        <div id="ai-chat-box" class="ai-chat-box glass p-6 flex-col mb-5">
-            <div class="flex items-center justify-between border-b border-white/10 pb-5 mb-5">
-                <div class="flex items-center gap-4">
-                    <div class="w-10 h-10 bg-blue-600 rounded-2xl flex items-center justify-center font-black text-xs shadow-lg shadow-blue-500/40">AI</div>
+    <div id="page-dash" class="page-view">
+        <div class="flex min-h-screen">
+            <aside class="w-72 glass border-r border-white/5 p-8 flex flex-col">
+                <div class="text-2xl font-black italic mb-20 text-blue-500">L-NODES</div>
+                <nav class="flex-1">
+                    <button class="sidebar-btn active w-full p-4 text-left font-bold text-sm">Dashboard</button>
+                    <button onclick="navigateTo('page-create')" class="sidebar-btn w-full p-4 text-left font-bold text-sm">Create Server</button>
+                    <a href="https://dash.lavishnodes.qzz.io" target="_blank" class="sidebar-btn block w-full p-4 text-left font-bold text-sm">Pterodactyl Console ↗</a>
+                </aside>
+            <main class="flex-1 p-12">
+                <header class="flex justify-between items-center mb-16">
                     <div>
-                        <span class="block font-black text-xs tracking-tighter text-blue-400">LAVISH AI 3.0</span>
+                        <h2 class="text-4xl font-black italic">Active <span class="text-blue-500">Servers</span></h2>
+                        <p class="text-gray-600 text-xs font-bold uppercase mt-2">Connected to dash.lavishnodes.qzz.io</p>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="text-right">
+                            <p class="text-xs font-black uppercase tracking-widest">Lavish User</p>
+                            <p class="text-[10px] text-green-500 font-bold">API ACTIVE</p>
+                        </div>
+                        <div class="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center font-black">L</div>
+                    </div>
+                </header>
+
+                <div id="server-container" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="glass p-10 rounded-[3rem] border-white/5 relative overflow-hidden group">
+                        <div class="flex justify-between mb-8">
+                            <span class="text-[10px] font-black uppercase px-3 py-1 bg-green-500/10 text-green-400 rounded-lg italic underline">Online</span>
+                            <span class="text-gray-700 text-[10px] font-black">NODE: RY-01</span>
+                        </div>
+                        <h3 class="text-3xl font-black mb-4 italic italic">Survival Hub</h3>
+                        <p class="text-gray-500 text-xs mb-10">4GB DDR5 | Ryzen 9 7950X | 20 Slots</p>
+                        <div class="flex gap-4">
+                            <a href="https://dash.lavishnodes.qzz.io" class="bg-white/5 hover:bg-white/10 flex-1 py-4 rounded-xl text-center text-[10px] font-black uppercase transition">Console</a>
+                            <button onclick="alert('Server Restarting...')" class="bg-blue-600/10 text-blue-400 flex-1 py-4 rounded-xl text-[10px] font-black uppercase">Restart</button>
+                        </div>
                     </div>
                 </div>
-                <button onclick="toggleChat()" class="text-gray-500 hover:text-white">✕</button>
-            </div>
-            <div id="ai-messages" class="flex-1 overflow-y-auto mb-5 flex flex-col pr-2">
-                <div class="ai-msg ai-bot-msg italic">Hii! I'm Lavish AI. How can I help you today? Ask about Free nodes or Ryzen 9 power!</div>
-            </div>
-            <div class="flex gap-3">
-                <input type="text" id="ai-input" placeholder="Say 'Hi' or ask a question..." class="flex-1 bg-white/5 border border-white/10 rounded-2xl px-5 py-4 text-xs focus:outline-none focus:border-blue-500 transition-all">
-                <button onclick="sendMsg()" class="btn-blue px-6 rounded-2xl font-black text-[10px] uppercase">Send</button>
+            </main>
+        </div>
+    </div>
+
+    <div id="page-create" class="page-view">
+        <div class="max-w-4xl mx-auto py-24 px-6">
+            <h2 class="text-6xl font-black italic mb-12 uppercase">New <span class="text-blue-500">Instance</span></h2>
+            <div class="glass p-16 rounded-[4rem] border-blue-500/20">
+                <div class="space-y-10">
+                    <div>
+                        <label class="block text-[10px] font-black uppercase tracking-widest text-gray-500 mb-4">Server Identity</label>
+                        <input type="text" placeholder="Server Name" class="w-full bg-white/5 border border-white/10 p-6 rounded-2xl focus:outline-none focus:border-blue-500">
+                    </div>
+                    <div class="grid grid-cols-2 gap-8">
+                        <div>
+                            <label class="block text-[10px] font-black uppercase mb-4">Resource Plan</label>
+                            <select class="w-full bg-white/5 border border-white/10 p-6 rounded-2xl font-bold uppercase text-xs">
+                                <option>Free Node (1GB)</option>
+                                <option>Nitro Node (4GB)</option>
+                                <option>Elite Node (16GB)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-black uppercase mb-4">Location</label>
+                            <select class="w-full bg-white/5 border border-white/10 p-6 rounded-2xl font-bold uppercase text-xs">
+                                <option>India (Mumbai)</option>
+                                <option>Germany (Frankfurt)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button onclick="deployNow()" class="bg-blue-600 w-full py-7 rounded-2xl font-black text-2xl shadow-blue-500/20 shadow-2xl hover:scale-[1.02] transition">CREATE SERVER</button>
+                    <button onclick="navigateTo('page-dash')" class="block w-full text-center text-gray-600 font-bold text-xs uppercase tracking-widest">Cancel Deployment</button>
+                </div>
             </div>
         </div>
-        <button onclick="toggleChat()" class="btn-blue w-20 h-20 rounded-[2rem] flex items-center justify-center shadow-[0_0_40px_rgba(59,130,246,0.3)] hover:scale-110 active:scale-95 transition-all">
-            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
+    </div>
+
+    <div class="fixed bottom-10 right-10 z-[2000]">
+        <div id="ai-chat" class="glass w-96 h-[500px] mb-6 rounded-[2.5rem] hidden flex-col p-8 border-blue-500/30">
+            <div class="text-[10px] font-black uppercase text-blue-500 tracking-widest mb-6 italic underline">Lavish AI Terminal</div>
+            <div id="ai-msgs" class="flex-1 overflow-y-auto space-y-4 mb-6 pr-2 text-xs">
+                <div class="bg-blue-600/10 p-4 rounded-2xl italic">System online. Aapka dashboard connected hai. Server banana hai toh 'Create' section mein jao!</div>
+            </div>
+            <div class="flex gap-4">
+                <input id="ai-in" type="text" placeholder="Type..." class="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-xs focus:outline-none">
+                <button onclick="aiAsk()" class="bg-blue-600 px-4 rounded-xl font-black">ASK</button>
+            </div>
+        </div>
+        <button onclick="document.getElementById('ai-chat').classList.toggle('hidden')" class="bg-blue-600 w-24 h-24 rounded-[2.5rem] flex items-center justify-center shadow-2xl hover:scale-110 transition">
+            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
         </button>
     </div>
 
-    <footer class="py-24 border-t border-white/5 text-center">
-        <div class="text-3xl font-black italic uppercase mb-6 tracking-tighter text-blue-500">LAVISH NODES</div>
-        <div class="flex justify-center space-x-12 text-gray-500 text-[10px] font-black tracking-widest mb-16">
-            <a href="https://discord.gg/cbathtnAXj" class="hover:text-blue-400">DISCORD</a>
-            <a href="https://status.lavishnodes.qzz.io" class="hover:text-blue-400">STATUS</a>
-            <a href="https://dash.lavishnodes.qzz.io/auth/login" class="hover:text-blue-400">LOGIN</a>
-        </div>
-        <div class="text-[9px] text-gray-800 font-bold uppercase tracking-[0.2em]">© 2026 | ALL-IN-ONE HOSTING</div>
-    </footer>
-
     <script>
-        // Loader logic
-        window.onload = () => { setTimeout(() => { 
-            const loader = document.getElementById('loader');
-            loader.style.opacity = '0'; 
-            setTimeout(() => loader.style.display='none', 500); 
-        }, 1200); };
-
-        // --- FIXED AUTH LOGIC ---
-        const loginBtn = document.getElementById('auth-action-btn');
-        const authText = document.getElementById('auth-status-text');
-
-        if (localStorage.getItem('lavish_user')) {
-            authText.innerText = "Welcome back to Lavishnodes";
-            loginBtn.innerText = "GO TO DASHBOARD";
-            loginBtn.href = "https://dash.lavishnodes.qzz.io/auth/login";
-        } else {
-            authText.innerText = "New user detected: Initialize Session";
-            loginBtn.innerText = "REGISTER NOW";
-            loginBtn.href = "https://dash.lavishnodes.qzz.io/auth/register";
-            
-            loginBtn.addEventListener('click', () => {
-                localStorage.setItem('lavish_user', 'true');
-            });
+        // ROUTING LOGIC (No 404 Error on GitHub)
+        function navigateTo(pageId) {
+            document.querySelectorAll('.page-view').forEach(p => p.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+            window.scrollTo({top: 0, behavior: 'smooth'});
         }
 
-        // --- AI LOGIC ---
-        function toggleChat() { 
-            const box = document.getElementById('ai-chat-box');
-            box.style.display = box.style.display === 'flex' ? 'none' : 'flex';
+        function mockLogin() {
+            localStorage.setItem('lavish_auth', 'true');
+            navigateTo('page-dash');
         }
-        function sendMsg() {
-            const input = document.getElementById('ai-input');
-            const msgArea = document.getElementById('ai-messages');
-            const userVal = input.value.trim();
-            if(!userVal) return;
-            msgArea.innerHTML += `<div class="ai-msg ai-user-msg">${userVal}</div>`;
-            const userQ = userVal.toLowerCase();
-            input.value = "";
+
+        function deployNow() {
+            alert("API Call Sent to dash.lavishnodes.qzz.io! Server creation started.");
+            navigateTo('page-dash');
+        }
+
+        // AI Logic
+        function aiAsk() {
+            const i = document.getElementById('ai-in');
+            const m = document.getElementById('ai-msgs');
+            if(!i.value) return;
+            m.innerHTML += `<div class="bg-blue-600 p-4 rounded-2xl ml-8 text-white font-bold">${i.value}</div>`;
+            const q = i.value.toLowerCase();
+            i.value = "";
             setTimeout(() => {
-                let reply = "";
-                if(userQ.match(/hi|hello|hey|hii|helo/)) {
-                    reply = "Hii! Welcome to Lavishnodes. Kaise ho? Aaj kaunsa beast launch karna hai? 🔥";
-                } else if(userQ.includes("kaise ho") || userQ.includes("how are you")) {
-                    reply = "Main ekdum badiya! Lavishnodes ki speed jaisa mast! Aap apna batao? 😊";
-                } else if(userQ.includes("free")) {
-                    reply = "Yes! Har user ko 1 Free Minecraft Node (Ryzen 9) milta hai. Registration ke baad dashboard check karein!";
-                } else if(userQ.includes("plan") || userQ.includes("price")) {
-                    reply = "Minecraft nodes ₹100/GB se shuru hain aur VPS ₹850/mo se! Full Ryzen 9 power milegi.";
-                } else if(userQ.includes("register") || userQ.includes("account")) {
-                    reply = "Register karne ke liye upar 'Register Now' button par click karo, ya seedha dash.lavishnodes.qzz.io/auth/register par jao!";
-                } else {
-                    reply = "Sahi sawal hai! Iske baare mein main team se confirm karunga, par tab tak aap hamare Discord support par puchenge toh best rahega! 😊";
-                }
-                msgArea.innerHTML += `<div class="ai-msg ai-bot-msg italic">${reply}</div>`;
-                msgArea.scrollTo({ top: msgArea.scrollHeight, behavior: 'smooth' });
-            }, 600);
+                let r = "Connecting to nodes... Everything is Online! Dashboard par server status check kar lo bhai.";
+                if(q.includes("hi") || q.includes("hey")) r = "Hello Lavish! Kaise ho? Servers manage karne ke liye ready?";
+                else if(q.includes("price")) r = "Pricing ₹100/GB se start hai. VPS ₹850 se. Best quality hai!";
+                m.innerHTML += `<div class="bg-white/5 p-4 rounded-2xl mr-8 italic">${r}</div>`;
+                m.scrollTo(0, m.scrollHeight);
+            }, 500);
         }
-        document.getElementById('ai-input').addEventListener("keypress", (e) => { if(e.key === "Enter") sendMsg(); });
+
+        // Check if already logged in
+        if(localStorage.getItem('lavish_auth')) navigateTo('page-dash');
     </script>
 </body>
 </html>
